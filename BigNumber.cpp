@@ -377,6 +377,22 @@ BigNumber operator+( const BigNumber & num1, const BigNumber & num2){
     return sum;
 }
 
+BigNumber operator-( const BigNumber & num1, const BigNumber & num2) {
+    BigNumber dif;
+    if(num1.sign == num2.sign) {
+        dif = BigNumber::unsignedSubtract( num1, num2 );
+        dif.sign = BigNumber::unsignedMax( num1, num2 ).sign;
+    }
+    else {
+        dif = BigNumber::unsignedAdd( num1, num2 );
+        dif.sign = num1.sign;
+    }
+    if(dif.numOfDigits == 1 && dif[0] == 0) {
+        dif.sign = true;
+    }
+    return dif;
+}
+
 BigNumber BigNumber:: operator>>( unsigned shift ){
     if ( numOfDigits < shift ){
         throw invalid_argument("Shift must be less than number of digits.");

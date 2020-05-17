@@ -26,11 +26,11 @@ int main() {
     //cout << BigNumber::unsignedLessOrEqual(myBig1, myBig2) << endl;
     //BigNumber a = BigNumber::unsignedSubtract(myBig1, myBig2);
     cout << (myBig1>>3) << "\t" << (myBig1>>3).getSign() << endl;
-//    try{
-//        cout << BigNumber::unsignedSubtract(myBig1, myBig2) << endl;
-//    }
-//    catch( out_of_range e){
-//        cout << e.what() << endl;
-//    }
+    try{
+        cout << (myBig2 - myBig1) << endl;
+    }
+    catch( out_of_range e){
+        cout << e.what() << endl;
+    }
     return 0;
 }
