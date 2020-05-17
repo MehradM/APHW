@@ -55,6 +55,10 @@ public:
     bool operator<( const BigNumber & myBig) const;
     BigNumber absoluteValue() const;
     BigNumber operator>>( unsigned shift );
+    BigNumber& operator--();
+    BigNumber operator--(int);
+    BigNumber& operator++();
+    BigNumber operator++(int);
 };
 
 

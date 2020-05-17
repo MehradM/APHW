@@ -32,5 +32,13 @@ int main() {
     catch( out_of_range e){
         cout << e.what() << endl;
     }
+
+    try {
+        cout << myBig1-- << endl << myBig1 << endl;
+        cout << ++++myBig2 << endl;
+    }
+    catch ( out_of_range e ) {
+        e.what();
+    }
     return 0;
 }
