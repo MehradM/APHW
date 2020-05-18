@@ -2,7 +2,7 @@
 #include <cstdint>
 
 #include "BigNumber.h"
-
+#include "MyBigNumber.h"
 using namespace std;
 
 int main() {
@@ -40,5 +40,8 @@ int main() {
     catch ( out_of_range e ) {
         e.what();
     }
+
+    MyBigNumber num(5983594759);
+    cout << MyBigNumber::multByOneDigit(num,5) << endl;
     return 0;
 }
