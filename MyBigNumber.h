@@ -4,6 +4,7 @@
 
 class MyBigNumber : public BigNumber {
     friend MyBigNumber operator * (const MyBigNumber& num1, const MyBigNumber& num2);
+    friend MyBigNumber power(const MyBigNumber& num1, unsigned num2);
 private:
     static MyBigNumber multByOneDigit(const MyBigNumber& num,int8_t a);
     void operator<<(unsigned shift);

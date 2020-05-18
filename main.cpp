@@ -42,6 +42,7 @@ int main() {
     }
     MyBigNumber myNum1 = 256;
     MyBigNumber myNum2 = 56;
-    cout << myNum1 * myNum2;
+    cout << myNum1 * myNum2 << endl;
+    cout << power(myNum1,4);
     return 0;
 }
