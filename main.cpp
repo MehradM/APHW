@@ -41,7 +41,6 @@ int main() {
         e.what();
     }
 
-    MyBigNumber num(5983594759);
-    cout << MyBigNumber::multByOneDigit(num,5) << endl;
+    
     return 0;
 }
