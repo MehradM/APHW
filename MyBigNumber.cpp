@@ -24,8 +24,15 @@ void MyBigNumber::operator<< (unsigned shift) {
     delete[] numArray;
     numOfDigits += shift;
     numArray = pNewSerie;
-    
-    
 }
 
-
+MyBigNumber operator * (const MyBigNumber& num1, const MyBigNumber& num2) {
+    MyBigNumber sum = 0;
+    MyBigNumber num = 0;
+    for (size_t i = 0; i < num2.numOfDigits; i++){
+        num = MyBigNumber::multByOneDigit(num1,num2[i]);
+        num<<i;
+        sum = sum + num;   
+    }
+    return sum;
+}

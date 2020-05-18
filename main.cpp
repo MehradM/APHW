@@ -40,6 +40,8 @@ int main() {
     catch ( out_of_range e ) {
         e.what();
     }
-
+    MyBigNumber myNum1 = 256;
+    MyBigNumber myNum2 = 56;
+    cout << myNum1 * myNum2;
     return 0;
 }
