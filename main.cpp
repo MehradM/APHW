@@ -41,6 +41,5 @@ int main() {
         e.what();
     }
 
-    
     return 0;
 }
