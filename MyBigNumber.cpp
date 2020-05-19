@@ -34,6 +34,7 @@ MyBigNumber operator * (const MyBigNumber& num1, const MyBigNumber& num2) {
         num<<i;
         sum = sum + num;   
     }
+    sum.sign = (num1.sign == num2.sign);
     return sum;
 }
 
