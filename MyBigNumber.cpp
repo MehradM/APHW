@@ -1,5 +1,20 @@
 #include "MyBigNumber.h"
+#include <iostream>
+#include <string>
+using namespace std;
 
+MyBigNumber::MyBigNumber(int8_t * pStart, int8_t * pEnd) {
+    short length = pEnd - pStart + 1;
+    cout << length << endl;
+    numArray = new int8_t[length];
+    int j = 0;
+    for (int8_t * i = pStart; i != (pEnd + 1); ++i) {
+        numArray[j] = *i;
+        ++j;
+    }
+    numOfDigits = length;
+    this->sign = true;
+}
 MyBigNumber MyBigNumber::multByOneDigit(const MyBigNumber& num,int8_t a) {
     int b = 0;
     BigNumber sum(b);
@@ -44,4 +59,23 @@ MyBigNumber MyBigNumber::power(const MyBigNumber& num1, unsigned num2) {
         powered = powered * num1;
     }
     return powered;
+}
+
+MyBigNumber MyBigNumber::operator()(unsigned startDigit,unsigned steps) {
+    int8_t * start = 0;
+    int8_t * end = 0;
+    if(startDigit > numOfDigits) {
+        end = numArray + numOfDigits - 1;
+    }
+    else {
+        end  = numArray + startDigit - 1;
+    }
+    auto dif =(int) (startDigit - steps);
+    if((dif) < 0) {
+        start = numArray;
+    }
+    else {
+        start = numArray + dif;
+    }
+    return MyBigNumber(start,end);
 }
