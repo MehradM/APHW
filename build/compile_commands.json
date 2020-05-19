@@ -1,0 +1,19 @@
+[
+{
+  "directory": "/home/mehrad/Documents/BigNumber/build",
+  "command": "/usr/bin/g++-9    -g   -std=gnu++14 -o CMakeFiles/TA14.dir/main.cpp.o -c /home/mehrad/Documents/BigNumber/main.cpp",
+  "file": "/home/mehrad/Documents/BigNumber/main.cpp"
+},
+
+{
+  "directory": "/home/mehrad/Documents/BigNumber/build",
+  "command": "/usr/bin/g++-9    -g   -std=gnu++14 -o CMakeFiles/TA14.dir/BigNumber.cpp.o -c /home/mehrad/Documents/BigNumber/BigNumber.cpp",
+  "file": "/home/mehrad/Documents/BigNumber/BigNumber.cpp"
+},
+
+{
+  "directory": "/home/mehrad/Documents/BigNumber/build",
+  "command": "/usr/bin/g++-9    -g   -std=gnu++14 -o CMakeFiles/TA14.dir/MyBigNumber.cpp.o -c /home/mehrad/Documents/BigNumber/MyBigNumber.cpp",
+  "file": "/home/mehrad/Documents/BigNumber/MyBigNumber.cpp"
+}
+]

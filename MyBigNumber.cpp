@@ -37,7 +37,7 @@ MyBigNumber operator * (const MyBigNumber& num1, const MyBigNumber& num2) {
     return sum;
 }
 
-MyBigNumber power(const MyBigNumber& num1, unsigned num2) {
+MyBigNumber MyBigNumber::power(const MyBigNumber& num1, unsigned num2) {
     MyBigNumber powered(1);
     for (size_t i = 0; i < num2; i++){
         powered = powered * num1;

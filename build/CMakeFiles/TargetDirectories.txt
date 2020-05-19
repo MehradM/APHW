@@ -1,0 +1,3 @@
+/home/mehrad/Documents/BigNumber/build/CMakeFiles/rebuild_cache.dir
+/home/mehrad/Documents/BigNumber/build/CMakeFiles/edit_cache.dir
+/home/mehrad/Documents/BigNumber/build/CMakeFiles/TA14.dir
