@@ -45,8 +45,8 @@ int main() {
     MyBigNumber myNum2 = "1";
     cout << myNum1 * myNum2 << endl;
     cout << MyBigNumber::power(myNum1,4) << endl;
-    MyBigNumber myNum3 = "50942389432809";
-    MyBigNumber myNum4 = "6234234";
+    MyBigNumber myNum3 = "-2348300293400";
+    MyBigNumber myNum4 = "+423800048320";
     MyBigNumber a = MyBigNumber::attach(myNum1,myNum2);
     cout << a << endl;
     cout << myNum3 << endl;

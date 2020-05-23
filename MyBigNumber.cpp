@@ -25,9 +25,11 @@ MyBigNumber MyBigNumber::multByOneDigit(const MyBigNumber& num,int8_t a) {
     return MyBigNumber(sum);
 }
 
-void MyBigNumber::operator<< (unsigned shift) {
+ MyBigNumber MyBigNumber::operator<< (unsigned shift) {
     if(shift == 0)
-        return;
+        return *this;
+    if(*this == "0")
+        return *this;
     int8_t * pNewSerie = new int8_t[numOfDigits + shift];
     for (size_t i = 0; i < numOfDigits ; i++)
     {
@@ -40,6 +42,7 @@ void MyBigNumber::operator<< (unsigned shift) {
     delete[] numArray;
     numOfDigits += shift;
     numArray = pNewSerie;
+    return *this;
 }
 
 MyBigNumber operator * (const MyBigNumber& num1, const MyBigNumber& num2) {
@@ -86,6 +89,9 @@ MyBigNumber MyBigNumber::operator()(unsigned startDigit,unsigned steps) const {
 }
 
 MyBigNumber operator / (const MyBigNumber& num1, const MyBigNumber& num2) {
+    if(num2 == "0") {
+        throw invalid_argument("Can not be divided by ZERO!");
+    }
     if(!BigNumber::unsignedGreaterOrEqual(num1,num2)) {
         return "0";
     }

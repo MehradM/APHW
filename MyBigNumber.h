@@ -8,7 +8,7 @@ class MyBigNumber : public BigNumber {
     friend MyBigNumber operator % (const MyBigNumber& num1, const MyBigNumber& num2);
 private:
     static MyBigNumber multByOneDigit(const MyBigNumber& num,int8_t a);
-    void operator<<(unsigned shift);
+    MyBigNumber operator<<(unsigned shift);
 public:
     static MyBigNumber utilityDiv( const MyBigNumber& num1, const MyBigNumber& num2 );
     static MyBigNumber utilityMod( const MyBigNumber& num1, const MyBigNumber& num2 );
