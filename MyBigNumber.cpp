@@ -4,18 +4,7 @@
 #include <stdexcept>
 using namespace std;
 
-MyBigNumber::MyBigNumber(int8_t * pStart, int8_t * pEnd) {
-    
-    short length = pEnd - pStart + 1;
-    numArray = new int8_t[length];
-    int j = 0;
-    for (int8_t * i = pStart; i != (pEnd + 1); ++i) {
-        numArray[j] = *i;
-        ++j;
-    }
-    numOfDigits = length;
-    this->sign = true;
-}
+
 MyBigNumber MyBigNumber::multByOneDigit(const MyBigNumber& num,int8_t a) {
     int b = 0;
     BigNumber sum(b);
@@ -25,7 +14,7 @@ MyBigNumber MyBigNumber::multByOneDigit(const MyBigNumber& num,int8_t a) {
     return MyBigNumber(sum);
 }
 
- MyBigNumber MyBigNumber::operator<< (unsigned shift) {
+ MyBigNumber MyBigNumber :: operator<< (unsigned shift) {
     if(shift == 0)
         return *this;
     if(*this == "0")
@@ -70,22 +59,17 @@ MyBigNumber MyBigNumber::power(const MyBigNumber& num1, unsigned num2) {
 }
 
 MyBigNumber MyBigNumber::operator()(unsigned startDigit,unsigned steps) const {
-    int8_t * start = 0;
-    int8_t * end = 0;
-    if(startDigit > numOfDigits) {
-        end = numArray + numOfDigits - 1;
+    std::string str("0");
+    if(startDigit > numOfDigits || startDigit == 0 || (int) (startDigit - steps) < 0) {
+        throw out_of_range("indexes out of range!");
     }
-    else {
-        end  = numArray + startDigit - 1;
+    
+    for (int i = startDigit - 1; i >= (int) ( startDigit - steps ); i--)
+    {
+        str += (char) (numArray[i] + '0');
     }
-    auto dif =(int) (startDigit - steps);
-    if((dif) < 0) {
-        start = numArray;
-    }
-    else {
-        start = numArray + dif;
-    }
-    return MyBigNumber(start,end);
+    return MyBigNumber(str);
+    
 }
 
 MyBigNumber operator / (const MyBigNumber& num1, const MyBigNumber& num2) {

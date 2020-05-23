@@ -9,10 +9,10 @@ class MyBigNumber : public BigNumber {
 private:
     static MyBigNumber multByOneDigit(const MyBigNumber& num,int8_t a);
     MyBigNumber operator<<(unsigned shift);
-public:
     static MyBigNumber utilityDiv( const MyBigNumber& num1, const MyBigNumber& num2 );
     static MyBigNumber utilityMod( const MyBigNumber& num1, const MyBigNumber& num2 );
     static MyBigNumber attach( const MyBigNumber& num1, const MyBigNumber& num2 );
+public:
     MyBigNumber(int8_t * pStart,int8_t * pEnd);
     MyBigNumber();
     MyBigNumber(const MyBigNumber& num): BigNumber(num) {}

@@ -40,17 +40,17 @@ int main() {
     catch ( out_of_range e ) {
         e.what();
     }
-
+    MyBigNumber aNumber = "10000032431";
+    cout << "aNumber:" << aNumber(6,6) << endl;
     MyBigNumber myNum1 = "0";
     MyBigNumber myNum2 = "1";
-    cout << myNum1 * myNum2 << endl;
-    cout << MyBigNumber::power(myNum1,4) << endl;
-    MyBigNumber myNum3 = "-2348300293400";
-    MyBigNumber myNum4 = "+423800048320";
-    MyBigNumber a = MyBigNumber::attach(myNum1,myNum2);
-    cout << a << endl;
-    cout << myNum3 << endl;
-    cout << myNum3 / myNum4 << endl;
-    cout << myNum3 % myNum4 << endl;
+    cout << "myNum1 * myNum2:" << myNum1 * myNum2 << endl;
+    cout << "MyBigNumber::power(myNum1,4):" << MyBigNumber::power(myNum1,4) << endl;
+    MyBigNumber myNum3 = "-1000";
+    MyBigNumber myNum4 = "99";
+    cout << "myNum3:" << myNum3 << endl;
+    cout << "myNum3 / myNum4:" << myNum3 / myNum4 << endl;
+    cout << "myNum3 % myNum4:" << myNum3 % myNum4 << endl;
     return 0;
 }
+
